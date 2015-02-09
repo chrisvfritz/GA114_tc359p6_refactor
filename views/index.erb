@@ -14,7 +14,10 @@
 
 
 <h1><%= "#{IsoCountryCodes.find(@country).name}" %> holidays in <%="#{@birth_month.strftime("%B %Y")}" %></h1>
-
+<%@hApi_birth.each do |date|
+  date.each do |hd| %>
+  <p><%= "#{hd["date"]}: #{hd["name"]}"%></p>
+<% end;end%>
 
 </body>
 </html>
