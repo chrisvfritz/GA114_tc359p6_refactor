@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1>United States holidays in <%= "#{@curr_month.strftime("%B %Y")}" %></h1>
-<%@hApi_curr.each do |date, hd_list|
-  hd_list.each do |hd| %>
-  <p><%= "#{date}: #{hd["name"]}"%></p>
+<%@hApi_curr.each do |date|
+  date.each do |hd| %>
+  <p><%= "#{hd["date"]}: #{hd["name"]}"%></p>
 <% end;end%>
 
 

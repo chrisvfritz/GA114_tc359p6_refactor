@@ -8,8 +8,7 @@ class MyWebApp < Sinatra::Base
     @birth_month = Date.new(1993,1)
     @curr_month  = Date.today
     @country     = 'us'
-    # Thanks for sort help, http://www.rubyinside.com/how-to/ruby-sort-hash
-    @hApi_curr   = HolidApi.get.sort_by { |date,list| date}
+    @hApi_curr   = HolidApi.get(year:"#{@curr_month.year}", month:"#{@curr_month.month}")
     @hApi_birth  = HolidApi.get(country:"#{@country}", year:"#{@birth_month.year}",
                                 month:"#{@birth_month.month}")
     erb :index
