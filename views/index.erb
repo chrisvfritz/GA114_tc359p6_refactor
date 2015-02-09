@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Holidays</title>
+  <meta charset="UTF-8">
+  <title>Holidays</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
 </head>
 <body>
-<h1>United States holidays in <%= "#{@curr_month.strftime("%B %Y")}" %></h1>
-<%@hApi_curr.each do |date|
-  date.each do |hd| %>
-  <p><%= "#{hd["date"]}: #{hd["name"]}"%></p>
-<% end;end%>
+<h3>United States holidays in <%= "#{@curr_month.strftime("%B %Y")}" %></h1>
+<div class="col-md-6">
+  <ul class="list-group">
+    <%@hApi_curr.each do |date|
+      date.each do |hd| %>
+      <li class="list-group-item"><%= "#{hd["date"]}: #{hd["name"]}"%></li>
+      <% end;end%>
+  </ul>
+</div>
 
-
-
-<h1><%= "#{IsoCountryCodes.find(@country).name}" %> holidays in <%="#{@birth_month.strftime("%B %Y")}" %></h1>
+<h3><%= "#{IsoCountryCodes.find(@country).name}" %> holidays in <%="#{@birth_month.strftime("%B %Y")}" %></h1>
 <%@hApi_birth.each do |date|
   date.each do |hd| %>
   <p><%= "#{hd["date"]}: #{hd["name"]}"%></p>
