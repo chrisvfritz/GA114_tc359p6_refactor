@@ -10,15 +10,15 @@ html lang='en'
   body
 
     .col-md-6
-      h3 United States holidays in #{@curr_month.strftime("%B %Y")}
+      h3 United States holidays in #{@curr_month.strftime('%B %Y')}
       ul.list-group
         - @hApi_curr.each do |date|
           - date.each do |hd| %
-            li.list-group-item #{hd["date"]}: #{hd["name"]}
+            li.list-group-item #{hd['date']}: #{hd['name']}
 
     .col-md-6
-      h3 #{IsoCountryCodes.find(@country).name} holidays in #{@birth_month.strftime("%B %Y")}
+      h3 #{IsoCountryCodes.find(@country).name} holidays in #{@birth_month.strftime('%B %Y')}
       ul.list-group
         - @hApi_birth.each do |date|
           - date.each do |hd|
-            li.list-group-item #{hd["date"]}: #{hd["name"]}
+            li.list-group-item #{hd['date']}: #{hd['name']}
