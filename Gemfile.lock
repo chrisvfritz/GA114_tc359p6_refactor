@@ -10,7 +10,7 @@ GEM
     iso_country_codes (0.6.1)
     json (1.8.2)
     multi_xml (0.5.5)
-    rack (1.6.0)
+    rack (1.5.2)
     rack-protection (1.5.3)
       rack
     rake (10.4.2)
@@ -30,6 +30,7 @@ PLATFORMS
 DEPENDENCIES
   holidapi
   iso_country_codes
+  rack (= 1.5.2)
   rake
   sinatra (~> 1.4.5)
   slim
